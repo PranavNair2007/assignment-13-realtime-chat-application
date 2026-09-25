@@ -1,6 +1,6 @@
 # 💬 Assignment 13: Real-Time Group Chat & Messaging Engine (Socket.io)
 
-**Author:** Anant Dhoundiyal
+**Author:** Pranav Nair 
 **Tech Stack:** Node.js, Express.js, Socket.io, In-Memory History Store, CORS
 
 A real-time group chat and direct messaging engine with multi-room support, typing indicators, live presence tracking, and message history hydration for new joiners.
@@ -17,7 +17,7 @@ A real-time group chat and direct messaging engine with multi-room support, typi
 ## Project structure
 
 ```
-Anant Dhoundiyal/
+Pranav Nair/
 ├── public/
 │   ├── index.html
 │   ├── app.js
