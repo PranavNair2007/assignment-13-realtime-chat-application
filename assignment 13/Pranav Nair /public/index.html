@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Realtime Chat — #general</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Login screen -->
+  <div id="login-screen">
+    <div class="login-card">
+      <h1>Realtime Chat</h1>
+      <p class="tag">socket.io · multi-room · presence</p>
+
+      <label for="username-input">Username</label>
+      <input id="username-input" type="text" placeholder="e.g. Aarav" maxlength="20" autocomplete="off" />
+
+      <label>Avatar</label>
+      <div class="avatar-picker" id="avatar-picker">
+        <div class="avatar-opt selected" data-avatar="🦊">🦊</div>
+        <div class="avatar-opt" data-avatar="🐼">🐼</div>
+        <div class="avatar-opt" data-avatar="🐢">🐢</div>
+        <div class="avatar-opt" data-avatar="🦁">🦁</div>
+        <div class="avatar-opt" data-avatar="🐙">🐙</div>
+      </div>
+
+      <div id="login-error"></div>
+      <button id="login-btn">Join chat</button>
+    </div>
+  </div>
+
+  <!-- Main app -->
+  <div id="app">
+    <div id="rooms-panel">
+      <div class="panel-title">Channels</div>
+      <div id="room-list">
+        <div class="room-item" data-room="general">#general</div>
+        <div class="room-item" data-room="developers">#developers</div>
+        <div class="room-item" data-room="random">#random</div>
+      </div>
+      <div class="self-card">
+        <div class="self-avatar" id="self-avatar">🦊</div>
+        <div id="self-username">—</div>
+      </div>
+    </div>
+
+    <div id="chat-panel">
+      <div id="chat-header">
+        <h2 id="room-title">#general</h2>
+        <span class="sub" id="room-sub">connecting…</span>
+      </div>
+      <div id="messages"></div>
+      <div id="typing-indicator"></div>
+      <div id="composer">
+        <input id="message-input" type="text" placeholder="Message #general" autocomplete="off" />
+        <button id="send-btn">Send</button>
+      </div>
+    </div>
+
+    <div id="users-panel">
+      <div class="panel-title">Online — <span id="online-count">0</span></div>
+      <div id="user-list"></div>
+    </div>
+  </div>
+
+  <!-- DM modal -->
+  <div id="dm-modal">
+    <div class="dm-box">
+      <div class="dm-header">
+        <span id="dm-title">Direct message</span>
+        <button id="dm-close">✕</button>
+      </div>
+      <div id="dm-messages"></div>
+      <div class="dm-composer">
+        <input id="dm-input" type="text" placeholder="Type a private message…" autocomplete="off" />
+        <button id="dm-send">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
